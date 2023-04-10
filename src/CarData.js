@@ -1,0 +1,80 @@
+const data = [
+  {
+    id: 1,
+    car: "Audi R8",
+    specs: {
+      model: "R8",
+      make: "Audi",
+      year: "2017",
+      fourwheel: "No",
+      ac: "Yes",
+      horsepower: "456kW",
+      fuelcap: "80L",
+    },
+    coverImg: "audiR8.png",
+    price: 100,
+  },
+
+  {
+    id: 2,
+    car: "Masarati MC20",
+    specs: {
+      model: "MC20",
+      make: "Masarati",
+      year: "2018",
+      fourwheel: "No",
+      ac: "Yes",
+      horsepower: "600kW",
+      fuelcap: "75L",
+    },
+    coverImg: "maserati.jpeg",
+    price: 150,
+  },
+  {
+    id: 3,
+    car: "Aston Martin DB11",
+    specs: {
+      model: "DB11",
+      make: "Aston Martin",
+      year: "2014",
+      fourwheel: "Yes",
+      ac: "Yes",
+      horsepower: "432kW",
+      fuelcap: "100L",
+    },
+    coverImg: "astonmartin.webp",
+    price: 130,
+  },
+  {
+    id: 4,
+    car: "Bugatti Chiron",
+    specs: {
+      model: "Chiron",
+      make: "Bugatti",
+      year: "2015",
+      fourwheel: "No",
+      ac: "Yes",
+      horsepower: "750kW",
+      fuelcap: "65L",
+    },
+    coverImg: "bugatti.jpg",
+    price: 240,
+  },
+  {
+    id: 5,
+    car: "BMW i8",
+    specs: {
+      model: "i8",
+      make: "BMW",
+      year: "2013",
+      fourwheel: "No",
+      ac: "Yes",
+      horsepower: "416kW",
+      fuelcap: "80L",
+    },
+    coverImg: "bmw.webp",
+    price: 85,
+  },
+];
+
+export default data;

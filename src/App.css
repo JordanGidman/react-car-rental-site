@@ -1,38 +1,633 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  color: #222;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 .App {
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 8rem;
+  box-shadow: 0rem 0rem 2rem 0.2rem rgb(34, 34, 34, 0.05);
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f03e3e;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #222;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: #f03e3e;
+}
+
+/* HERO */
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0rem 10rem;
+  height: 90vh;
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-title {
+  font-size: 8rem;
+  line-height: 6.6rem;
+  letter-spacing: 0.2rem;
+}
+
+.hero-title strong {
+  color: #f03e3e;
+}
+
+.hero-text {
+  font-size: 1.6rem;
+  color: #555;
+}
+
+.hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-btn {
+  font-size: 1.8rem;
+  font-weight: 600rem;
+  padding: 0.6rem 2rem;
+  border: none;
+  color: #fff;
+}
+
+.btn-book {
+  background-color: #222;
+}
+
+.btn-learn {
+  background-color: #f03e3e;
+}
+
+.hero-img {
+  max-width: 90rem;
+}
+
+/* BOOKING FORM */
+
+.section-book {
+  padding: 10rem;
+}
+
+.section-book-title {
+  font-size: 3.2rem;
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 2.6rem;
+  column-gap: 2.6rem;
+}
+
+.section-book-input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 0.6rem;
+}
+
+.booking-input {
+  font-size: 1.6rem;
+  color: #555;
+}
+
+.booking-label {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.booking-label strong {
+  color: #f03e3e;
+}
+
+.btn-submit-booking {
+  background-color: #f03e3e;
+  color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.book-message {
+  font-size: 4rem;
+  font-weight: 700;
   text-align: center;
+  grid-row: 3/4;
+  grid-column: span 3;
+
+  color: #37b24d;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ABOUT SECTION */
+
+.section-about {
+  padding: 8rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.about-card-icon {
+  width: 25rem;
+  margin-bottom: 2rem;
+  color: #f03e3e;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  padding: 0rem 10rem;
+}
+
+.about-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.about-card-heading {
+  font-size: 3.2rem;
+  margin-bottom: 1.6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.about-card-text {
+  font-size: 1.6rem;
+  color: #555;
+}
+
+/* SECTION-FLEET */
+
+.section-fleet {
+  padding: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fleet-text {
+  font-size: 1.6rem;
+  color: #555;
+  margin-top: -8rem;
+  margin-bottom: 8rem;
+}
+
+.fleet-viewer-box {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid #222;
+  padding: 1.8rem;
+  width: 80vw;
+}
+
+.fleet-viewer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.fleet-nav-link {
+  font-size: 2.4rem;
+  font-weight: 600;
+  background-color: #fff;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  width: 100%;
+
+  transition: all 0.3s ease;
+}
+
+.fleet-nav-link:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.fleet-car-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 0.8rem;
+  background-color: #f03e3e;
+  color: #fff;
+}
+
+.fleet-viewer-spec-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.fleet-spec-headings,
+.fleet-car-spec-box {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  font-size: 1.6rem;
+  /* border: 1px solid #222; */
+  height: auto;
+}
+
+.fleet-spec-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #222;
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.fleet-viewer-image {
+  max-width: 60rem;
+}
+
+.fleet-rent-car-btn {
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 100%;
+  background-color: #f03e3e;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+}
+
+/* AD BANNER */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  padding: 8rem 4rem;
+  background-color: #222;
+  color: #fff;
+  margin-top: 8rem;
+}
+.banner-main-text {
+  font-size: 4.4rem;
+  color: #fff;
+}
+.banner-secondary-text {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+.banner-secondary-text strong {
+  color: #f03e3e;
+}
+
+/* OUR TESTIMONIAL SECTION */
+.section-our-test {
+  padding: 8rem 20rem;
+  padding-top: 0rem;
+}
+
+.our-test-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4rem;
+}
+
+.our-test-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.our-test-hero-img {
+  max-width: 100%;
+}
+
+.our-test-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.our-test-title {
+  font-size: 5.8rem;
+  line-height: 6.4rem;
+}
+
+.our-test-btn {
+  background-color: rgb(240, 62, 62);
+  color: #fff;
+  border: none;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  max-width: 40%;
+  margin-top: 2.4rem;
+}
+
+.our-test-icon {
+  width: 26rem;
+  /* stroke: rgb(243, 101, 101, 0.6); */
+  stroke: rgb(240, 62, 62, 0.5);
+}
+
+.OTCard {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+
+  align-items: center;
+
+  gap: 1.2rem;
+}
+
+.OTCard-title {
+  font-size: 3.2rem;
+  line-height: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+/* PEOPLE TESTIMONIALS SECTION*/
+.section-people {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 8rem;
+}
+.people-heading {
+  text-align: center;
+  font-size: 4.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.people-text {
+  max-width: 50%;
+  margin-bottom: 8rem;
+}
+
+.testimonials-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.testimonial {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.testimonial-owner-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  justify-content: space-between;
+  padding-right: 4rem;
+}
+
+.testimonial-owner-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+}
+
+.person-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.person-location {
+  font-size: 1.4rem;
+  color: #555;
+  font-style: italic;
+}
+
+.person-img {
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+}
+
+.person-quote-img {
+  height: 8rem;
+  width: 8rem;
+}
+
+/* FAQ SECTION */
+
+.section-FAQ {
+  padding: 10rem 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8rem;
+}
+
+.dropdown-menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  transition: all 0.3s ease-in;
+  align-items: center;
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: all 0.3s ease;
+}
+
+.dropdown-option:hover {
+  cursor: pointer;
+  transform: scale(110%);
+}
+
+.dropdown-option-heading {
+  font-size: 2.2rem;
+  padding: 1rem 4rem;
+  width: 100rem;
+  border: 1px solid #333;
+}
+
+.dropdown-option-text {
+  display: none;
+  justify-content: center;
+  opacity: 0;
+  padding: 0.4rem 2rem;
+  transition: all 1s ease-in;
+}
+
+/* FOOTER */
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+  /* align-items: center; */
+  justify-content: center;
+  padding: 12rem;
+  box-shadow: 0 1.2rem 3rem 2rem rgb(51, 51, 51, 0.05);
+}
+
+.footer-heading {
+  font-size: 3.6rem;
+  font-weight: 700;
+  padding-bottom: 1.2rem;
+}
+
+.footer-contact,
+.footer-links,
+.footer-hours,
+.footer-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-contact-details-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-contact-details-container span {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.footer-link-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-link,
+.footer-hours {
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #f03e3e;
+  cursor: pointer;
+}
+
+.footer-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.footer-cta-input {
+  font-size: 1.6rem;
+  padding: 0.6rem;
+}
+
+.footer-cta-btn {
+  font-size: 1.8rem;
+  background-color: #f03e3e;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+}
+
+/* GENERAL */
+
+.section-subheading {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 4.4rem;
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.fleet-nav--active {
+  background-color: #f03e3e;
+  color: #fff;
+}
+
+.secondary-text {
+  color: #666;
+  font-size: 1.6rem;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.highlight {
+  background-color: #f03e3e;
+  color: #fff;
+}
+
+section {
+  padding: 20rem;
 }
