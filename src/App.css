@@ -12,14 +12,25 @@ html {
 
 .App {
   transition: all 0.3s ease;
+  overflow-x: hidden;
 }
 
-.nav {
+.nav,
+.mobile-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 3rem 8rem;
   box-shadow: 0rem 0rem 2rem 0.2rem rgb(34, 34, 34, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: #fff;
+  width: 100vw;
+  z-index: 999;
+
+  transition: all 0.3s ease-in;
 }
 
 .logo {
@@ -34,11 +45,13 @@ html {
   align-items: center;
   justify-content: space-between;
   gap: 6rem;
-  font-size: 2rem;
-  font-weight: 600;
 }
 
 .nav-link {
+  background-color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 2rem;
   text-decoration: none;
   color: #222;
 }
@@ -46,6 +59,23 @@ html {
 .nav-link:hover,
 .nav-link:active {
   color: #f03e3e;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  padding: 2rem 6rem;
+  display: none;
+  visibility: none;
+}
+
+.mobile-nav-icon {
+  height: 3rem;
+  width: 3rem;
+}
+
+.mobile-nav-icon:hover {
+  stroke: #f03e3e;
+  cursor: pointer;
 }
 
 /* HERO */
@@ -94,12 +124,26 @@ html {
   color: #fff;
 }
 
+.hero-btn:hover {
+  cursor: pointer;
+}
+
 .btn-book {
   background-color: #222;
+
+  transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+  transform: scale(110%);
+}
+.btn-learn:hover {
+  transform: scale(110%);
 }
 
 .btn-learn {
   background-color: #f03e3e;
+  transition: all 0.3s ease;
 }
 
 .hero-img {
@@ -152,6 +196,13 @@ html {
   border: none;
   font-size: 1.8rem;
   font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.btn-submit-booking:hover {
+  cursor: pointer;
+  background-color: #222;
 }
 
 .book-message {
@@ -220,6 +271,7 @@ html {
   color: #555;
   margin-top: -8rem;
   margin-bottom: 8rem;
+  text-align: center;
 }
 
 .fleet-viewer-box {
@@ -255,6 +307,7 @@ html {
 .fleet-nav-link:hover {
   background-color: #222;
   color: #fff;
+  cursor: pointer;
 }
 
 .fleet-car-price {
@@ -271,15 +324,43 @@ html {
 .fleet-viewer-spec-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
 }
 
-.fleet-spec-headings,
+/* .fleet-spec-headings,
 .fleet-car-spec-box {
   display: grid;
-  grid-template-rows: repeat(7, 1fr);
+
   font-size: 1.6rem;
-  /* border: 1px solid #222; */
+  border: 1px solid #222;
   height: auto;
+} */
+
+.spec-col-1 {
+  grid-column: 1/ 2;
+}
+.spec-col-2 {
+  grid-column: 2/ 3;
+}
+
+.spec-model {
+  grid-row: 1/2;
+}
+
+.spec-make {
+  grid-row: 2/3;
+}
+.spec-year {
+  grid-row: 3/4;
+}
+.spec-wheel {
+  grid-row: 4/5;
+}
+.spec-ac {
+  grid-row: 5/6;
+}
+.spec-hp {
+  grid-row: 6/7;
 }
 
 .fleet-spec-heading {
@@ -289,6 +370,7 @@ html {
   border: 1px solid #222;
   width: 100%;
   padding: 0.8rem;
+  font-size: 1.6rem;
 }
 
 .fleet-viewer-image {
@@ -305,6 +387,11 @@ html {
   padding: 0.8rem;
 }
 
+.fleet-rent-car-btn:hover {
+  background-color: #222;
+  cursor: pointer;
+}
+
 /* AD BANNER */
 .banner {
   display: flex;
@@ -316,6 +403,7 @@ html {
   background-color: #222;
   color: #fff;
   margin-top: 8rem;
+  margin-bottom: 20rem;
 }
 .banner-main-text {
   font-size: 4.4rem;
@@ -332,7 +420,7 @@ html {
 
 /* OUR TESTIMONIAL SECTION */
 .section-our-test {
-  padding: 8rem 20rem;
+  padding: 12rem 20rem;
   padding-top: 0rem;
 }
 
@@ -376,6 +464,13 @@ html {
   font-weight: 600;
   max-width: 40%;
   margin-top: 2.4rem;
+
+  transition: all 0.3s ease;
+}
+
+.our-test-btn:hover {
+  background-color: #222;
+  cursor: pointer;
 }
 
 .our-test-icon {
@@ -413,7 +508,7 @@ html {
 }
 
 .people-text {
-  max-width: 50%;
+  max-width: 65%;
   margin-bottom: 8rem;
 }
 
@@ -501,9 +596,11 @@ html {
   transition: all 0.3s ease;
 }
 
-.dropdown-option:hover {
+.dropdown-option-heading:hover {
   cursor: pointer;
   transform: scale(110%);
+  background-color: #f03e3e;
+  color: #fff;
 }
 
 .dropdown-option-heading {
@@ -511,6 +608,8 @@ html {
   padding: 1rem 4rem;
   width: 100rem;
   border: 1px solid #333;
+
+  transition: all 0.3s ease;
 }
 
 .dropdown-option-text {
@@ -590,10 +689,16 @@ html {
 
 .footer-cta-btn {
   font-size: 1.8rem;
+  font-weight: 600;
   background-color: #f03e3e;
   color: #fff;
   border: none;
   padding: 0.8rem;
+}
+
+.footer-cta-btn:hover {
+  cursor: pointer;
+  background-color: #222;
 }
 
 /* GENERAL */

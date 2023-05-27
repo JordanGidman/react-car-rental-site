@@ -1,20 +1,20 @@
 import React from "react";
 import OurTestCard from "./OurTestCard";
-import hero_img_OT_2 from "../img/hero_img_OT_2.png";
+// import hero_img_OT_2 from "../img/hero_img_OT_2.png";
 
 export default function OurTestimonial() {
   return (
     <section className="section-our-test">
-      <div className="our-test-img">
+      {/* <div className="our-test-img">
         <img src={hero_img_OT_2} alt="car" className="our-test-hero-img" />
-      </div>
+      </div> */}
       <div className="our-test-container">
         <div className="our-test-info">
           <h3 className="section-subheading">Why Choose Us</h3>
           <h1 className="our-test-title">
             Best value for money you will find on the market
           </h1>
-          <p className="secondary-text">
+          <p className="secondary-text our-test-text">
             Cruise the streets in the car you have always dreamed of without
             breaking the bank. We are commited to keeping our pices affordable
             for all. Everyone should get their chance to ride around in one of

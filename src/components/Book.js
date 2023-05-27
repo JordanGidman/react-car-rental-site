@@ -14,9 +14,11 @@ export default function Book() {
             Select Car Type <strong>*</strong>
           </label>
           <select name="car-type" id="car-type" className="booking-input">
-            <option value="ferrari">Ferrari</option>
-            <option value="bmw">BMW</option>
-            <option value="audi">Audi</option>
+            <option value="ferrari">Masarati MC20</option>
+            <option value="astonmartin">Aston Martin DB11</option>
+            <option value="audi">Audi R8</option>
+            <option value="bugatti">Bugatti Chiron</option>
+            <option value="bmw">BMW i8</option>
           </select>
         </div>
         <div className="section-book-input-box">

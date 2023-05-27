@@ -7,7 +7,7 @@ export default function Footer() {
         <h3 className="footer-heading">JG Rental</h3>
         <p className="footer-contact-info secondary-text">
           For any enquiries regarding your rental or hiring me to build a killer
-          website like this for you please feel free
+          website like this for you please feel free to reach out.
         </p>
         <div className="footer-contact-details-container">
           <svg

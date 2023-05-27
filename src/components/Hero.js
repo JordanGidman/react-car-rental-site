@@ -1,6 +1,7 @@
 import React from "react";
 // import hero_img from "../img/hero_img.webp";
 import hero_img_2 from "../img/hero_img_2.webp";
+import handleNav from "./handleNav";
 
 export default function Hero() {
   return (
@@ -16,8 +17,26 @@ export default function Hero() {
           BMW and more.
         </p>
         <div className="hero-btns">
-          <button className="hero-btn btn-book">Book a ride</button>
-          <button className="hero-btn btn-learn">Learn More</button>
+          <button
+            className="hero-btn btn-book"
+            onClick={() => {
+              handleNav(
+                document.querySelector(`.section-book`).getBoundingClientRect()
+              );
+            }}
+          >
+            Book a ride
+          </button>
+          <button
+            className="hero-btn btn-learn"
+            onClick={() => {
+              handleNav(
+                document.querySelector(`.section-about`).getBoundingClientRect()
+              );
+            }}
+          >
+            Learn More
+          </button>
         </div>
       </div>
       <div className="hero-image">

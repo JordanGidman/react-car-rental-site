@@ -11,7 +11,7 @@ const data = [
       horsepower: "456kW",
       fuelcap: "80L",
     },
-    coverImg: "audiR8.png",
+    coverImg: "audiR8.webp",
     price: 100,
   },
 
@@ -27,7 +27,7 @@ const data = [
       horsepower: "600kW",
       fuelcap: "75L",
     },
-    coverImg: "maserati.jpeg",
+    coverImg: "maserati.webp",
     price: 150,
   },
   {
@@ -57,7 +57,7 @@ const data = [
       horsepower: "750kW",
       fuelcap: "65L",
     },
-    coverImg: "bugatti.jpg",
+    coverImg: "bugatti.webp",
     price: 240,
   },
   {

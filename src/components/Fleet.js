@@ -1,5 +1,6 @@
 import React from "react";
 import data from "../CarData";
+import handleNav from "./handleNav";
 
 export default function Fleet() {
   const [currCar, setCurrCar] = React.useState(data[0]);
@@ -41,38 +42,64 @@ export default function Fleet() {
         </nav>
         <img
           className="fleet-viewer-image"
-          src={`../img/${currCar.coverImg}`}
+          src={require(`../img/${currCar.coverImg}`)}
           alt={`${currCar.car}`}
         />
         <div className="car-specs">
           <span className="fleet-car-price">{`£${currCar.price}.00 Per day`}</span>
           <div className="fleet-viewer-spec-box">
-            <div className="fleet-spec-headings">
-              <span className="fleet-spec-heading">Model</span>
-              <span className="fleet-spec-heading">Make</span>
-              <span className="fleet-spec-heading">Year</span>
-              <span className="fleet-spec-heading">4-Wheel</span>
-              <span className="fleet-spec-heading">AC</span>
-              <span className="fleet-spec-heading">Horsepower</span>
-              <span className="fleet-spec-heading">Fuel</span>
-            </div>
-            <div className="fleet-car-spec-box">
-              <span className="fleet-spec-heading">{currCar.specs.model}</span>
-              <span className="fleet-spec-heading">{currCar.specs.make}</span>
-              <span className="fleet-spec-heading">{currCar.specs.year}</span>
-              <span className="fleet-spec-heading">
-                {currCar.specs.fourwheel}
-              </span>
-              <span className="fleet-spec-heading">{currCar.specs.ac}</span>
-              <span className="fleet-spec-heading">
-                {currCar.specs.horsepower}
-              </span>
-              <span className="fleet-spec-heading">
-                {currCar.specs.fuelcap}
-              </span>
-            </div>
+            <span className="fleet-spec-heading spec-col-1 spec-model">
+              Model
+            </span>
+            <span className="fleet-spec-heading spec-col-1 spec-make">
+              Make
+            </span>
+            <span className="fleet-spec-heading spec-col-1 spec-year">
+              Year
+            </span>
+            <span className="fleet-spec-heading spec-col-1 spec-wheel">
+              4-Wheel
+            </span>
+            <span className="fleet-spec-heading spec-col-1 spec-ac">AC</span>
+            <span className="fleet-spec-heading spec-col-1 spec-hp">
+              Horsepower
+            </span>
+            <span className="fleet-spec-heading spec-col-1 spec-fuel">
+              Fuel
+            </span>
+
+            <span className="fleet-spec-heading spec-col-2 spec-model">
+              {currCar.specs.model}
+            </span>
+            <span className="fleet-spec-heading spec-col-2 spec-make">
+              {currCar.specs.make}
+            </span>
+            <span className="fleet-spec-heading spec-col-2 spec-year">
+              {currCar.specs.year}
+            </span>
+            <span className="fleet-spec-heading spec-col-2 spec-wheel">
+              {currCar.specs.fourwheel}
+            </span>
+            <span className="fleet-spec-heading spec-col-2 spec-ac">
+              {currCar.specs.ac}
+            </span>
+            <span className="fleet-spec-heading spec-col-2 spec-hp">
+              {currCar.specs.horsepower}
+            </span>
+            <span className="fleet-spec-heading spec-col-2 spec-fuel">
+              {currCar.specs.fuelcap}
+            </span>
           </div>
-          <button className="fleet-rent-car-btn">Reserve Now</button>
+          <button
+            className="fleet-rent-car-btn"
+            onClick={() => {
+              handleNav(
+                document.querySelector(`.section-book`).getBoundingClientRect()
+              );
+            }}
+          >
+            Reserve Now
+          </button>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import handleNav from "./handleNav";
 
 export default function Navbar() {
   return (
@@ -6,29 +7,66 @@ export default function Navbar() {
       <div className="logo">JG Car Rental</div>
       <ul className="nav-list">
         <li className="nav-list-item">
-          <a href="google.com" target="_blank" className="nav-link">
+          <button
+            className="nav-link"
+            onClick={() => {
+              handleNav(
+                document.querySelector(`header`).getBoundingClientRect()
+              );
+            }}
+          >
             Home
-          </a>
+          </button>
         </li>
         <li className="nav-list-item">
-          <a href="google.com" target="_blank" className="nav-link">
+          <button
+            className="nav-link"
+            onClick={() => {
+              handleNav(
+                document.querySelector(`.section-about`).getBoundingClientRect()
+              );
+            }}
+          >
             About
-          </a>
+          </button>
         </li>
         <li className="nav-list-item">
-          <a href="google.com" target="_blank" className="nav-link">
+          <button
+            className="nav-link"
+            onClick={() => {
+              handleNav(
+                document.querySelector(`.section-fleet`).getBoundingClientRect()
+              );
+            }}
+          >
             Vehicle Options
-          </a>
+          </button>
         </li>
         <li className="nav-list-item">
-          <a href="google.com" target="_blank" className="nav-link">
+          <button
+            className="nav-link"
+            onClick={() => {
+              handleNav(
+                document
+                  .querySelector(`.section-our-test`)
+                  .getBoundingClientRect()
+              );
+            }}
+          >
             Testimonials
-          </a>
+          </button>
         </li>
         <li className="nav-list-item">
-          <a href="google.com" target="_blank" className="nav-link">
+          <button
+            className="nav-link"
+            onClick={() => {
+              handleNav(
+                document.querySelector(`footer`).getBoundingClientRect()
+              );
+            }}
+          >
             Contact
-          </a>
+          </button>
         </li>
       </ul>
     </nav>
