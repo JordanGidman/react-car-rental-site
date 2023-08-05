@@ -10,7 +10,7 @@ import Fleet from "./components/Fleet";
 import Banner from "./components/Banner";
 import OurTestimonial from "./components/OurTestimonial";
 import People from "./components/People";
-import FAQ from "./components/FAQ";
+import FAQ from "./components/FAQ-v2";
 import Footer from "./components/Footer";
 
 function App() {

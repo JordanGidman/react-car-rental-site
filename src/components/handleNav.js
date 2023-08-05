@@ -9,14 +9,14 @@ export default function handleNav(coords) {
     const navHeight = document
       .querySelector(`.nav`)
       .getBoundingClientRect().height;
-    let v = document.body.getBoundingClientRect().width < 741 ? 0 : navHeight;
+    let v = document.body.getBoundingClientRect().width < 900 ? 0 : navHeight;
 
     return v;
   };
 
   window.scrollTo({
-    left: coords.left + window.pageXOffset,
-    top: coords.top - checkNavHeight() + window.pageYOffset,
+    left: coords.left + window.scrollX,
+    top: coords.top - checkNavHeight() + window.scrollY,
     behavior: "smooth",
   });
 }

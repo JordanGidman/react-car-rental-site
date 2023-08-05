@@ -1,9 +1,26 @@
 import React from "react";
+import { useState } from "react";
 
 export default function Book() {
-  const bookCar = function () {
-    document.querySelector(`.book-message`).textContent = `Booking Successful!`;
+  const [booked, setBooked] = useState(false);
+  const [carType, setCarType] = useState("ferrari");
+  const [pickupLocation, setPickupLocation] = useState("london");
+  const [dropoffLocation, setDropOffLocation] = useState("london");
+  const handleBookCar = function () {
+    setBooked(true);
   };
+
+  function handleChangeCarType(e) {
+    setCarType(e.target.value);
+  }
+
+  function handleChangePickup(e) {
+    setPickupLocation(e.target.value);
+  }
+
+  function handleChangeDropoff(e) {
+    setDropOffLocation(e.target.value);
+  }
 
   return (
     <section className="section-book">
@@ -13,7 +30,13 @@ export default function Book() {
           <label for="car-type" className="booking-label">
             Select Car Type <strong>*</strong>
           </label>
-          <select name="car-type" id="car-type" className="booking-input">
+          <select
+            name="car-type"
+            id="car-type"
+            className="booking-input"
+            value={carType}
+            onChange={handleChangeCarType}
+          >
             <option value="ferrari">Masarati MC20</option>
             <option value="astonmartin">Aston Martin DB11</option>
             <option value="audi">Audi R8</option>
@@ -29,6 +52,8 @@ export default function Book() {
             name="location-pickup"
             id="location-pickup"
             className="booking-input"
+            value={pickupLocation}
+            onChange={handleChangePickup}
           >
             <option value="london">London</option>
             <option value="manchester">Manchester</option>
@@ -44,6 +69,8 @@ export default function Book() {
             name="location-drop"
             id="location-drop"
             className="booking-input"
+            value={dropoffLocation}
+            onChange={handleChangeDropoff}
           >
             <option value="london">London</option>
             <option value="manchester">Manchester</option>
@@ -73,10 +100,10 @@ export default function Book() {
             className="booking-input"
           ></input>
         </div>
-        <button className="btn-submit-booking" onClick={bookCar}>
+        <button className="btn-submit-booking" onClick={handleBookCar}>
           Book
         </button>
-        <span className="book-message"></span>
+        <span className="book-message">{booked && `Booking Successful`}</span>
       </div>
     </section>
   );
